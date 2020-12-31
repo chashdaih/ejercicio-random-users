@@ -1,0 +1,21 @@
+export const nationalities = [
+    { value: 'all', name: 'Todos' },
+    { value: 'AU', name: 'Australia' },
+    { value: 'BR', name: 'Brazil' },
+    { value: 'CA', name: 'Canada' },
+    { value: 'CH', name: 'Suiza' },
+    { value: 'DE', name: 'Alemania' },
+    { value: 'DK', name: 'DInamarca' },
+    { value: 'ES', name: 'España' },
+    { value: 'FI', name: 'Finlandia' },
+    { value: 'FR', name: 'Francia' },
+    { value: 'GB', name: 'Gran Bretaña' },
+    { value: 'IE', name: 'Irlanda' },
+    { value: 'IR', name: 'Iran' },
+    { value: 'NO', name: 'Noruega' },
+    { value: 'NL', name: 'Paises Bajos' },
+    { value: 'NZ', name: 'Nueva Zelanda' },
+    { value: 'TR', name: 'Tuquia' },
+    { value: 'US', name: 'EE.UU.' },
+
+];

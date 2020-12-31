@@ -1,0 +1,15 @@
+.loadingContainer  {
+    height: calc(100vh - 64px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainList {
+    background-color: white;
+    margin-top: 20px !important;
+}
+
+button:hover {
+    color: #cc3333;
+}

@@ -1,44 +1,44 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
-## Available Scripts
+Para ejecutar este proyecto es necesario node y npm.
 
-In the project directory, you can run:
+Después de clonarlo, es necesario instalar las dependencias
+
+### `npm i`
+
+Para correr el proyecto en modo desarrollo, ejecutar el siguiente comando:
 
 ### `npm start`
+- Se ejecutará en [http://localhost:3000], se recargará si se hacen cambios al código
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para generar la versión de producción
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Los archivos generados se pueden poner en un servidor (por ejemplo, http-server de node) para su uso.
+Este comando optimiza los archivos y tiene mejor desempeño que el modo desarrollo.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+Comentarios sobre el ejercicio
+- No hacer llamadas innecesarias al API:
+    Se decidió utilizar redux para facilitar este punto; solo se hace una llamda al servidor y se mantiene en memoria.
+    El filtrado, vista de detalle y generación de CSV se hacen de manera local.
+- Organización del código
+    Se utilizó la librería React para dividir el código en componentes. Además, se decidió utilizar Typescript para tener un mejor autocomplete y detección de errores; los modelos se definieron en models.ts.
+    Se logró no duplicar código.
+- Router recomendado
+    Se utilizó React Router; su uso se puede ver principalmente en App.tsx
+- Mobile First y diseño responsive
+    La aplicación no consume muchos recursos por lo que puede correr en dispositivos móviles; asumiendo una mala velocidad de conexión, todas las pantallas tienen indicadores de loading.
+    Se utilizó la librería de componentes Material UI, lo que permite tener un diseño responsive sin complicación.
+- Optimización DEV/PROD
+    El comando 'build' de react se encarga de esto.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Sobre los requerimientos UX/UI
+- Descarga de documento asíncrono
+    Como esto ocurre muy rápido, se símuló un tiempo de espera (mostrado por un snackbar y un indicador de carga) con lo que se muestra que no se bloquea la aplicación y más bien esto se hace de manera asíncrona.
+- Sobre las URL
+    Para poder recargar o entrar directo a la página de detalles, se utilizó por simpleza Hash History, que inserta un # en la url para poder determinar en el cliente que ruta es.
+- Hover hace aparecer botón de borrar
+    Como en el celular no hay mouse, se optó por mantener siempre visible el botón de borrar usuario. En el caso de si tener mouse, el botón se pondrá rojo on hover.
